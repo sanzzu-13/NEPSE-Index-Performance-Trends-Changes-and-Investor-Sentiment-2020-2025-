@@ -2,7 +2,7 @@
 ![GitHub Gist stars](https://img.shields.io/github/gist/stars/:gistId) ![Stack Exchange questions](https://img.shields.io/stackexchange/:stackexchangesite/t/:query)  ![GitHub License](https://img.shields.io/github/license/:sanju/:repo)
 ![Gitea Forks](https://img.shields.io/gitea/forks/:user/:repo)
 ![GitHub User's stars](https://img.shields.io/github/stars/:user)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/:interval/:user/:repo)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/:interval/github%20/:repo)
 
 ## Overview
 
