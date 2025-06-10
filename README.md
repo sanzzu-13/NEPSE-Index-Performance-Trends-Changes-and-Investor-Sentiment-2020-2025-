@@ -1,5 +1,6 @@
 # NEPSE Index Performance: Trends, Changes, and Investor Sentiment (2020–2025)
-![GitHub Gist stars](https://img.shields.io/github/gist/stars/:gistId)
+![GitHub Gist stars](https://img.shields.io/github/gist/stars/:gistId) ![Stack Exchange questions](https://img.shields.io/stackexchange/:stackexchangesite/t/:query)
+
 
 
 ## Overview
