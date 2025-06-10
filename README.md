@@ -1,4 +1,5 @@
 # NEPSE Index Performance: Trends, Changes, and Investor Sentiment (2020–2025)
+![Alt text for the image](path/to/your/image.jpg "Optional title for the image")
 
 ## Overview
 
