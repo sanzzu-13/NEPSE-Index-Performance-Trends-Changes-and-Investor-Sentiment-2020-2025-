@@ -1,5 +1,6 @@
 # NEPSE Index Performance: Trends, Changes, and Investor Sentiment (2020–2025)
-![NEPSE Stock Market Chart](![image](https://github.com/user-attachments/assets/32882bb3-0a13-456c-855e-7154c2498521)
+![NEPSE Stock Market Chart](![image](![image](https://github.com/user-attachments/assets/df56ca2b-2ed8-465e-b4f7-0aa43995f5fb)
+)
  "Graphical representation of NEPSE Index")
 
 ## Overview
