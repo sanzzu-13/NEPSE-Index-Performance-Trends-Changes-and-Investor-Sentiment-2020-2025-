@@ -1,5 +1,5 @@
 # NEPSE Index Performance: Trends, Changes, and Investor Sentiment (2020–2025)
-![Alt text for the image](path/to/your/image.jpg "Optional title for the image")
+![Alt text for the image]([path/to/your/image.jpg](https://github.com/sanzzu-13/NEPSE-Index-Performance-Trends-Changes-and-Investor-Sentiment-2020-2025-/blob/main/Screenshot%202025-06-09%20114157.png) "NEPSE Absolute Change ")
 
 ## Overview
 
