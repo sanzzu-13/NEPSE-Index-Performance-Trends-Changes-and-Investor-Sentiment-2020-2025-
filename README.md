@@ -1,8 +1,4 @@
 # NEPSE Index Performance: Trends, Changes, and Investor Sentiment (2020–2025)
-![NEPSE Stock Market Chart](![image](![image](https://github.com/user-attachments/assets/df56ca2b-2ed8-465e-b4f7-0aa43995f5fb)
-)
- "Graphical representation of NEPSE Index")
-
 ## Overview
 
 This repository contains the NEPSE Daily Index Data from January 1, 2020, to March 4, 2025. This dataset offers insights into the overall performance of Nepal's stock market by tracking the value of listed companies. It is a valuable resource for analyzing market trends, changes, and investor sentiment over the specified period.
