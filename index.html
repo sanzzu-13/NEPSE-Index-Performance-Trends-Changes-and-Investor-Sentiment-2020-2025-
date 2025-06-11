@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction App</title>
+</head>
+<body>
+    <h2>Enter Features</h2>
+    <form method="POST">
+        {% for i in range(1, 5) %}
+        <label>Feature {{ i }}:</label>
+        <input type="text" name="feature{{ i }}"><br><br>
+        {% endfor %}
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction is not none %}
+    <h3>Prediction: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
