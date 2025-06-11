@@ -1,24 +1,23 @@
-from flask import Flask, render_template, request
+import streamlit as st
 import pickle
 import numpy as np
 
-app = Flask(__name__)
-
-# Load model
+# Load the trained model
 with open("random_forest_model.pkl", "rb") as f:
     model = pickle.load(f)
 
-@app.route("/", methods=["GET", "POST"])
-def index():
-    prediction = None
-    if request.method == "POST":
-        try:
-            # Example: adjust based on how many inputs your model needs
-            features = [float(request.form[f"feature{i}"]) for i in range(1, 5)]
-            prediction = model.predict([features])[0]
-        except Exception as e:
-            prediction = f"Error: {e}"
-    return render_template("index.html", prediction=prediction)
+st.title("Random Forest Predictor")
 
-if __name__ == "__main__":
-    app.run(debug=True)
+st.write("Enter input features below:")
+
+# You can change the number of features as needed
+feature1 = st.number_input("Feature 1", step=0.1)
+feature2 = st.number_input("Feature 2", step=0.1)
+feature3 = st.number_input("Feature 3", step=0.1)
+feature4 = st.number_input("Feature 4", step=0.1)
+
+# Button for prediction
+if st.button("Predict"):
+    input_data = np.array([[feature1, feature2, feature3, feature4]])
+    prediction = model.predict(input_data)
+    st.success(f"Prediction: {prediction[0]}")
