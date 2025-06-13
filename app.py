@@ -1,22 +1,29 @@
 import streamlit as st
-import joblib
+import pickle
 import numpy as np
 
-# Load the trained model using joblib
-model = joblib.load('random_forest_model.pkl')
+# Load the saved Random Forest Classifier model
+with open('random_forest_classifier.pkl', 'rb') as file:
+    model = pickle.load(file)
 
-# Set up the web app
-st.set_page_config(page_title="NEPSE % Change Predictor", layout="centered")
+st.title("Tomorrow's Increase Prediction")
 
-st.title("📈 Predict NEPSE Percentage Change")
-st.markdown("Provide **Index Value** and **Absolute Change** to estimate the **Percentage Change**.")
+st.write("Enter today's data to predict if tomorrow's value will increase or not.")
 
-# Input fields
-index_value = st.number_input("🔢 Index Value", value=2000.0, step=0.1)
-absolute_change = st.number_input("📉 Absolute Change", value=10.0, step=0.1)
+# Input fields for features
+index_value = st.number_input("Index Value", value=0.0)
+absolute_change = st.number_input("Absolute Change", value=0.0)
 
-# Prediction logic
-if st.button("Predict Percentage Change"):
+# Predict button
+if st.button("Predict"):
+    # Prepare input data for prediction
     input_data = np.array([[index_value, absolute_change]])
+    
+    # Make prediction
     prediction = model.predict(input_data)[0]
-    st.success(f"📊 Predicted Percentage Change: **{prediction:.2f}%**")
+    
+    # Show result
+    if prediction == 1:
+        st.success("Prediction: Tomorrow's value WILL increase 📈")
+    else:
+        st.error("Prediction: Tomorrow's value will NOT increase 📉")
