@@ -2,28 +2,23 @@ import streamlit as st
 import pickle
 import numpy as np
 
-# Load the trained model
-with open("random_forest_model.pkl", "rb") as f:
-    model = pickle.load(f)
+# Load the trained Random Forest model
+with open('random_forest_model.pkl', 'rb') as file:
+    model = pickle.load(file)
 
-# Title
-st.title("Market Movement Predictor")
-st.write("Enter the current Index Value to predict if the market will increase tomorrow.")
+# Streamlit UI
+st.set_page_config(page_title="NEPSE Prediction App", layout="centered")
 
-# User input
-index_value = st.number_input("Index Value", format="%.4f")
+st.title("📈 NEPSE Actual Change Predictor")
+st.write("Enter the **Index Value** and **Absolute Change** to predict the Actual Change value.")
 
-# Predict button
-if st.button("Predict"):
-    try:
-        input_array = np.array([[index_value]])
-        prediction = model.predict(input_array)[0]
+# Input fields
+index_value = st.number_input("Index Value", value=2000.0, step=0.1)
+absolute_change = st.number_input("Absolute Change", value=10.0, step=0.1)
 
-        if prediction > 0:
-            st.success(f"✅ Tomorrow will be an **Increase** (Predicted Change: {prediction:.4f})")
-        elif prediction < 0:
-            st.error(f"🔻 Tomorrow will be a **Decrease** (Predicted Change: {prediction:.4f})")
-        else:
-            st.info("➖ No Change Expected (Predicted Change: 0.0000)")
-    except Exception as e:
-        st.error(f"❌ Error during prediction: {e}")
+# Predict
+if st.button("Predict Actual Change"):
+    input_data = np.array([[index_value, absolute_change]])
+    prediction = model.predict(input_data)[0]
+    st.success(f"📊 Predicted Actual Change: **{prediction:.2f}**")
+
