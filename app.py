@@ -1,10 +1,9 @@
 import streamlit as st
-import pickle
+import joblib
 import numpy as np
 
-# Load the trained model
-with open('random_forest_model.pkl', 'rb') as file:
-    model = pickle.load(file)
+# Load the trained model using joblib
+model = joblib.load('random_forest_model.pkl')
 
 # Set up the web app
 st.set_page_config(page_title="NEPSE % Change Predictor", layout="centered")
