@@ -2,28 +2,29 @@ import streamlit as st
 import pickle
 import numpy as np
 
-# Load the saved Random Forest Classifier model
-with open('random_forest_classifier.pkl', 'rb') as file:
+# Load the saved model
+with open('random_forest_model.pkl', 'rb') as file:
     model = pickle.load(file)
 
-st.title("Tomorrow's Increase Prediction")
+# Streamlit UI
+st.set_page_config(page_title="NEPSE Price Predictor", page_icon="📊")
+st.title("📈 NEPSE Tomorrow Prediction")
+st.subheader("Will the market increase tomorrow? Let's find out!")
 
-st.write("Enter today's data to predict if tomorrow's value will increase or not.")
+# User inputs
+index_value = st.number_input("Enter today's Index Value", format="%.2f")
+absolute_change = st.number_input("Enter today's Absolute Change", format="%.2f")
 
-# Input fields for features
-index_value = st.number_input("Index Value", value=0.0)
-absolute_change = st.number_input("Absolute Change", value=0.0)
-
-# Predict button
+# Prediction logic
 if st.button("Predict"):
-    # Prepare input data for prediction
     input_data = np.array([[index_value, absolute_change]])
-    
-    # Make prediction
-    prediction = model.predict(input_data)[0]
-    
-    # Show result
-    if prediction == 1:
-        st.success("Prediction: Tomorrow's value WILL increase 📈")
+    prediction = model.predict(input_data)
+
+    if prediction[0] == 1:
+        st.success("Yes! The market is likely to go UP tomorrow 🚀📈")
     else:
-        st.error("Prediction: Tomorrow's value will NOT increase 📉")
+        st.error("No! The market might go DOWN tomorrow 😢📉")
+
+# Footer
+st.markdown("---")
+st.caption("Made with ❤️ by Susmi and Baby")
